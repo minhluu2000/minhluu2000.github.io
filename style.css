@@ -1,0 +1,197 @@
+:root {
+  --bg: #fdfdfc;
+  --text: #1c1c1c;
+  --muted: #5f5f5c;
+  --faint: #8b8b87;
+  --rule: #e6e5e1;
+  --link: #1f4e8c;
+  --link-line: #a9bcd8;
+  --serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #151618;
+    --text: #e5e4e0;
+    --muted: #a6a59f;
+    --faint: #7d7c77;
+    --rule: #2c2d30;
+    --link: #93b6e8;
+    --link-line: #3f5778;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 1.125rem/1.6 var(--serif);
+  font-kerning: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  max-width: 38rem;
+  margin: 0 auto;
+  padding: 5rem 1.25rem 4rem;
+}
+
+p { margin: 0; }
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-color: var(--link-line);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+a:hover { text-decoration-color: currentColor; }
+a:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Header */
+
+h1 {
+  margin: 0;
+  font-size: 2.25rem;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.role {
+  margin-top: 0.4rem;
+  color: var(--muted);
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+  font: 500 0.875rem/1.5 var(--sans);
+}
+
+.intro { margin-top: 2.25rem; }
+.intro p + p { margin-top: 0.9rem; }
+
+/* Sections */
+
+section { margin-top: 3.5rem; }
+
+h2 {
+  margin: 0 0 1.5rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--rule);
+  font: 600 0.75rem/1.4 var(--sans);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.aside {
+  margin-top: 2rem;
+  font: 400 0.8125rem/1.5 var(--sans);
+  color: var(--faint);
+}
+
+/* Publications */
+
+.year-group { position: relative; }
+.year-group + .year-group { margin-top: 2.25rem; }
+
+.year {
+  margin: 0 0 0.75rem;
+  font: 500 0.875rem/1.5 var(--sans);
+  font-variant-numeric: tabular-nums;
+  color: var(--faint);
+}
+
+.pubs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pub + .pub { margin-top: 1.75rem; }
+
+.pub-title {
+  font-weight: 600;
+  line-height: 1.4;
+}
+.pub-title a {
+  color: inherit;
+  text-decoration-color: var(--rule);
+}
+.pub-title a:hover { text-decoration-color: var(--link); }
+
+.pub-authors,
+.pub-venue,
+.pub-note { font-size: 1rem; }
+
+.pub-authors {
+  margin-top: 0.25rem;
+  color: var(--muted);
+}
+.pub-authors b {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.pub-venue {
+  font-style: italic;
+  color: var(--muted);
+}
+
+.pub-note { margin-top: 0.4rem; }
+
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  margin-top: 0.5rem;
+  font: 500 0.8125rem/1.5 var(--sans);
+}
+
+/* On wide screens the year hangs in the left margin. */
+@media (min-width: 62rem) {
+  .year {
+    position: absolute;
+    top: 0.15rem;
+    left: -5rem;
+    margin: 0;
+  }
+}
+
+/* Projects */
+
+.projects {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 1rem;
+}
+.projects li + li { margin-top: 0.75rem; }
+.projects a { font-weight: 600; }
+
+/* Footer */
+
+footer {
+  margin-top: 4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  font: 400 0.8125rem/1.5 var(--sans);
+  color: var(--faint);
+}
