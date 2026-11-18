@@ -4,205 +4,155 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Minh Luu</title>
-  <meta name="description" content="Minh Luu works on machine learning and LLM agents for hardware design verification at Infineon Technologies.">
+  <meta name="description" content="Minh Luu builds machine learning and LLM agent tools for hardware verification at Texas A&M University.">
   <meta name="color-scheme" content="light dark">
   <meta property="og:title" content="Minh Luu">
-  <meta property="og:description" content="Machine learning and LLM agents for hardware design verification.">
+  <meta property="og:description" content="Machine learning and LLM agents for hardware verification.">
   <meta property="og:url" content="https://minhluu2000.github.io/">
   <meta property="og:image" content="https://minhluu2000.github.io/avatar.png">
   <meta property="og:type" content="website">
   <link rel="icon" href="avatar.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=JetBrains+Mono:wght@400;500&display=swap">
   <style>
     :root {
-      --bg: #f3f6fa;
-      --surface: #ffffff;
-      --thumb: #edf1f7;
-      --text: #111723;
-      --muted: #535e6e;
-      --faint: #8590a0;
-      --border: #dfe5ee;
-      --line: #cdd6e2;
-      --grid: #dbe2ec;
-      --accent: #0a7f70;
-      --accent-soft: #dff3ef;
-      --bug: #d4433a;
-      --bug-soft: #fbe6e4;
-      --glow-a: rgb(20 184 166 / 14%);
-      --glow-b: rgb(59 130 246 / 10%);
-      --shadow: 0 1px 2px rgb(15 23 42 / 5%), 0 16px 40px -20px rgb(15 23 42 / 25%);
-      --sans: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      --display: "Space Grotesk", "DM Sans", system-ui, sans-serif;
+      --bg: #ffffff;
+      --text: #0b0b0c;
+      --muted: #575a62;
+      --faint: #9a9da5;
+      --rule: #e2e2e5;
+      --line: #c8cad0;
+      --strong: #0b0b0c;
+      --accent: #2433ff;
+      --bug: #ef3428;
+      --bug-soft: #ffe2df;
+      --sans: "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
       --mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #0a0d13;
-        --surface: #111620;
-        --thumb: #151b27;
-        --text: #e6eaf2;
-        --muted: #9aa5b5;
-        --faint: #6a7585;
-        --border: #1f2836;
-        --line: #2c3748;
-        --grid: #1a2230;
-        --accent: #3fd0b5;
-        --accent-soft: #0e2d2a;
-        --bug: #ff6b5f;
-        --bug-soft: #3a1b19;
-        --glow-a: rgb(45 212 191 / 10%);
-        --glow-b: rgb(96 165 250 / 9%);
-        --shadow: 0 1px 2px rgb(0 0 0 / 40%), 0 16px 40px -20px rgb(0 0 0 / 70%);
+        --bg: #0b0b0c;
+        --text: #f1f1f3;
+        --muted: #a4a6ad;
+        --faint: #686b73;
+        --rule: #232428;
+        --line: #3a3c42;
+        --strong: #f1f1f3;
+        --accent: #8a94ff;
+        --bug: #ff5e53;
+        --bug-soft: #3d1613;
       }
     }
 
     *, *::before, *::after { box-sizing: border-box; }
-
     html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 
     body {
       margin: 0;
       background: var(--bg);
       color: var(--text);
-      font: 400 1rem/1.6 var(--sans);
+      font: 400 1.0625rem/1.6 var(--sans);
       -webkit-font-smoothing: antialiased;
     }
 
-    p, h1, h2, h3, ul, ol, figure { margin: 0; }
-    h1, h2, h3 { font-family: var(--display); }
+    p, h1, h2, h3, ul, ol, dl, dd, figure { margin: 0; }
     ul, ol { padding: 0; list-style: none; }
 
-    a { color: var(--accent); text-underline-offset: 0.2em; }
-    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+    a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 1.5px;
+      text-underline-offset: 0.22em;
+    }
+    a:hover { color: var(--accent); }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
-    .wrap { max-width: 58rem; margin: 0 auto; padding: 0 1.25rem; }
+    .wrap { max-width: 62rem; margin: 0 auto; padding: 0 1.25rem; }
 
-    /* Shared SVG styles */
-    .gfx { display: block; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+    .label {
+      font: 500 0.75rem/1.4 var(--mono);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* Top line */
+    .topline {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem 1.5rem;
+      padding: 1.25rem 0 0.9rem;
+      border-bottom: 1px solid var(--strong);
+    }
+    .topline nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1.25rem; }
+    .topline nav a { color: var(--text); text-decoration: none; }
+    .topline nav a:hover { color: var(--accent); }
+
+    /* Hero */
+    .name {
+      margin-top: 2.25rem;
+      font-size: clamp(3.25rem, 12.5vw, 8.5rem);
+      font-weight: 800;
+      font-stretch: 125%;
+      line-height: 0.88;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 2.5rem;
+      margin-top: 2.5rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    @media (min-width: 52rem) {
+      .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 3.5rem; }
+    }
+
+    .who { display: flex; gap: 1.25rem; align-items: flex-start; }
+    .photo {
+      width: 88px;
+      height: 88px;
+      flex: none;
+      object-fit: cover;
+      filter: grayscale(1) contrast(1.05);
+    }
+    .intro .lead { font-size: 1.25rem; line-height: 1.45; }
+    .intro p + p { margin-top: 0.8rem; color: var(--muted); font-size: 1rem; }
+
+    /* Waveform */
+    .wave-fig { border-top: 1px solid var(--strong); padding-top: 0.7rem; }
+    .wave-cap { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: 0.6rem; }
+    .wave { display: block; width: 100%; height: auto; }
+
+    .gfx { fill: none; stroke-width: 1.6; stroke-linecap: square; stroke-linejoin: miter; }
+    .gfx text { stroke: none; font-family: var(--mono); }
     .s-acc { stroke: var(--accent); }
     .s-bug { stroke: var(--bug); }
     .s-faint { stroke: var(--faint); }
     .s-line { stroke: var(--line); }
-    .s-grid { stroke: var(--grid); }
+    .s-rule { stroke: var(--rule); }
     .f-acc { fill: var(--accent); }
     .f-bug { fill: var(--bug); }
-    .f-accsoft { fill: var(--accent-soft); }
     .f-bugsoft { fill: var(--bug-soft); }
-    .f-surface { fill: var(--surface); }
+    .f-bg { fill: var(--bg); }
     .f-line { fill: var(--line); stroke: none; }
-    .f-white { fill: #fff; }
-
-    /* Hero */
-    .hero {
-      position: relative;
-      padding: 3rem 0 0.5rem;
-      overflow: hidden;
-      background:
-        radial-gradient(38rem 22rem at 82% 30%, var(--glow-a), transparent 70%),
-        radial-gradient(34rem 20rem at 8% 0%, var(--glow-b), transparent 70%);
-    }
-    @media (min-width: 52rem) { .hero { padding-top: 4.5rem; } }
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(var(--line) 1px, transparent 1px);
-      background-size: 22px 22px;
-      -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 85%);
-      mask-image: linear-gradient(to bottom, #000 0%, transparent 85%);
-      pointer-events: none;
-    }
-    .hero-grid {
-      position: relative;
-      display: grid;
-      gap: 2.5rem;
-      align-items: center;
-    }
-    @media (min-width: 52rem) {
-      .hero-grid { grid-template-columns: minmax(0, 1fr) 22rem; gap: 3.5rem; }
-    }
-
-    .id { display: flex; align-items: center; gap: 1rem; }
-    .avatar {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--surface);
-      box-shadow: 0 0 0 1px var(--border);
-      flex: none;
-    }
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 600;
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-    }
-    .role { margin-top: 0.3rem; color: var(--muted); font-size: 0.9375rem; }
-
-    .intro { margin-top: 1.75rem; max-width: 34rem; font-size: 1.0625rem; }
-    .intro p + p { margin-top: 0.75rem; }
-    .intro .lead { color: var(--text); }
-    .intro p:not(.lead) { color: var(--muted); }
-
-    .contact { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      padding: 0.35rem 0.8rem;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: var(--surface);
-      color: var(--text);
-      font-size: 0.875rem;
-      font-weight: 500;
-      text-decoration: none;
-      transition: border-color 0.15s, color 0.15s;
-    }
-    .btn:hover { border-color: var(--accent); color: var(--accent); }
-    .btn svg { width: 15px; height: 15px; flex: none; }
-    .btn-sm { padding: 0.2rem 0.65rem; font-size: 0.8125rem; }
-    .btn-sm svg { width: 13px; height: 13px; }
-
-    /* Waveform card */
-    .wave-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 0.9rem 1rem 1rem;
-      box-shadow: var(--shadow);
-    }
-    .wave-head {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 0.6rem;
-      font: 500 0.75rem/1.4 var(--mono);
-      color: var(--faint);
-    }
-    .wave { width: 100%; height: auto; }
-    .wave text { stroke: none; font-family: var(--mono); }
-    .wave .t-label { fill: var(--muted); font-size: 10px; font-weight: 500; }
-    .wave .t-bus { fill: var(--text); font-size: 9.5px; text-anchor: middle; }
-    .wave .t-bus .bad { fill: var(--bug); }
-    .wave-foot { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.75rem; }
-    .chip {
-      padding: 0.15rem 0.5rem;
-      border-radius: 6px;
-      font: 500 0.71875rem/1.5 var(--mono);
-    }
-    .chip-bug { color: var(--bug); background: var(--bug-soft); }
-    .chip-acc { color: var(--accent); background: var(--accent-soft); }
+    .t-label { fill: var(--muted); font-size: 10px; font-weight: 500; }
+    .t-bus { fill: var(--text); font-size: 9.5px; text-anchor: middle; }
+    .t-bad { fill: var(--bug); }
+    .t-acc { fill: var(--accent); }
+    .t-note { font-size: 9.5px; font-weight: 500; }
 
     .trace { stroke-dasharray: 900; animation: draw 1.8s ease-out both; }
     .d1 { animation-delay: 0.1s; }
     .d2 { animation-delay: 0.2s; }
-    .fade { animation: fade 0.6s ease-out both; animation-delay: 0.5s; }
-    .fade-late { animation: fade 0.5s ease-out both; animation-delay: 1.2s; }
+    .fade { animation: fade 0.6s ease-out 0.5s both; }
+    .fade-late { animation: fade 0.5s ease-out 1.2s both; }
     @keyframes draw { from { stroke-dashoffset: 900; } to { stroke-dashoffset: 0; } }
     @keyframes fade { from { opacity: 0; } }
     @media (prefers-reduced-motion: reduce) {
@@ -210,341 +160,282 @@
     }
 
     /* Sections */
-    section { padding-top: 3.5rem; }
-    .section-head {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 0.25rem 1rem;
-      margin-bottom: 1.25rem;
-    }
-    h2 { font-size: 1.375rem; font-weight: 600; letter-spacing: -0.01em; }
-    .section-note { color: var(--faint); font: 400 0.8125rem/1.5 var(--mono); }
-
-    /* Research areas */
-    .areas { display: grid; gap: 1rem; }
-    @media (min-width: 44rem) { .areas { grid-template-columns: repeat(3, 1fr); } }
-    .area {
-      padding: 1.25rem;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: var(--surface);
-    }
-    .icon {
+    .sec {
       display: grid;
-      place-items: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      background: var(--accent-soft);
-      color: var(--accent);
+      gap: 1.25rem;
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--rule);
     }
-    .icon svg { width: 22px; height: 22px; stroke: currentColor; }
-    .area h3 { margin-top: 0.9rem; font-size: 1rem; font-weight: 600; }
+    @media (min-width: 52rem) {
+      .sec { grid-template-columns: 11rem minmax(0, 1fr); gap: 2rem; }
+    }
+    .num { display: block; font: 500 0.75rem/1.4 var(--mono); color: var(--accent); }
+    .sec-label h2 {
+      margin-top: 0.3rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-stretch: 112%;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+    .sec-label .aka { margin-top: 0.6rem; font: 400 0.75rem/1.5 var(--mono); color: var(--faint); }
+
+    /* Research */
+    .areas { display: grid; }
+    .area { padding: 1.1rem 0; border-top: 1px solid var(--rule); }
+    .area:first-child { padding-top: 0; border-top: 0; }
+    @media (min-width: 40rem) {
+      .areas { grid-template-columns: repeat(3, 1fr); }
+      .area { padding: 0 1.25rem; border-top: 0; border-left: 1px solid var(--rule); }
+      .area:first-child { padding-left: 0; border-left: 0; }
+    }
+    .area .n { font: 500 0.75rem/1.4 var(--mono); color: var(--faint); }
+    .area h3 { margin-top: 0.4rem; font-size: 1.0625rem; font-weight: 600; }
     .area p { margin-top: 0.3rem; color: var(--muted); font-size: 0.9375rem; line-height: 1.55; }
 
     /* Publications */
-    .pub {
-      display: grid;
-      grid-template-columns: 9rem minmax(0, 1fr);
-      gap: 1.5rem;
-      padding: 1.5rem 0;
+    .pub { display: grid; gap: 1rem; padding: 1.75rem 0; border-top: 1px solid var(--rule); }
+    .pub:first-child { padding-top: 0; border-top: 0; }
+    .pub:last-child { padding-bottom: 0; }
+    @media (min-width: 44rem) {
+      .pub { grid-template-columns: minmax(0, 1fr) 8.5rem; gap: 2rem; }
     }
-    .pub + .pub { border-top: 1px solid var(--border); }
-    .pub:first-child { padding-top: 0.25rem; }
-    .thumb {
-      display: grid;
-      place-items: center;
-      height: 6.25rem;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: var(--thumb);
-    }
-    .thumb svg { width: 136px; height: 96px; }
-    @media (max-width: 36rem) {
-      .pub { grid-template-columns: 1fr; gap: 1rem; }
-      .thumb { height: 5.5rem; }
-    }
-
-    .venue {
-      display: inline-block;
-      padding: 0.1rem 0.55rem;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      font: 500 0.75rem/1.6 var(--mono);
-    }
-    .pub h3 { margin-top: 0.5rem; font-size: 1.0625rem; font-weight: 600; line-height: 1.4; }
-    .pub h3 a { color: var(--text); text-decoration: none; }
-    .pub h3 a:hover { color: var(--accent); }
-    .authors { margin-top: 0.3rem; color: var(--muted); font-size: 0.9375rem; }
+    .venue { font: 500 0.75rem/1.4 var(--mono); letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); }
+    .pub h3 { margin-top: 0.4rem; font-size: 1.125rem; font-weight: 600; line-height: 1.35; }
+    .pub h3 a { text-decoration: none; }
+    .authors { margin-top: 0.35rem; color: var(--muted); font-size: 0.9375rem; }
     .authors b { color: var(--text); font-weight: 600; }
     .note { margin-top: 0.5rem; font-size: 0.9375rem; }
-    .links { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.85rem; }
+    .links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.25rem; margin-top: 0.7rem; font: 500 0.8125rem/1.5 var(--mono); }
+    .fig { display: none; }
+    @media (min-width: 44rem) {
+      .fig { display: block; padding-top: 1.4rem; }
+      .fig svg { display: block; width: 136px; height: 96px; }
+    }
 
     /* Projects */
-    .projects { display: grid; gap: 1rem; }
-    @media (min-width: 40rem) { .projects { grid-template-columns: 1fr 1fr; } }
-    .project {
-      display: block;
-      padding: 1.1rem 1.25rem;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: var(--surface);
-      color: var(--text);
-      text-decoration: none;
-      transition: border-color 0.15s;
-    }
-    .project:hover { border-color: var(--accent); }
-    .project-top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
-    .project h3 { font-size: 1rem; font-weight: 600; }
-    .lang { color: var(--faint); font: 400 0.75rem/1.5 var(--mono); }
-    .project p { margin-top: 0.3rem; color: var(--muted); font-size: 0.9375rem; }
+    .proj { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.25rem 1rem; padding: 1rem 0; border-top: 1px solid var(--rule); }
+    .proj:first-child { padding-top: 0; border-top: 0; }
+    .proj:last-child { padding-bottom: 0; }
+    .proj h3 { font-size: 1.0625rem; font-weight: 600; }
+    .proj .lang { font: 400 0.75rem/1.9 var(--mono); color: var(--faint); }
+    .proj p { grid-column: 1 / -1; color: var(--muted); font-size: 0.9375rem; }
 
     /* Footer */
-    footer {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 0.5rem 1rem;
-      margin-top: 4rem;
-      padding: 1.25rem 0 2.5rem;
-      border-top: 1px solid var(--border);
-      color: var(--faint);
-      font-size: 0.8125rem;
-    }
+    .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 1rem; padding: 1.5rem 0 3rem; }
   </style>
 </head>
 <body>
+<div class="wrap">
 
-<header class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <div class="id">
-        <img class="avatar" src="avatar.png" width="72" height="72" alt="Photo of Minh Luu">
-        <div>
-          <h1>Minh Luu</h1>
-          <p class="role">Machine learning for hardware verification</p>
+  <header>
+    <div class="topline label">
+      <span>Texas A&amp;M University</span>
+      <nav aria-label="Profiles">
+        <a href="https://scholar.google.com/citations?user=tP9zxUwAAAAJ">Scholar ↗</a>
+        <a href="https://github.com/minhluu2000">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/minh2k/">LinkedIn ↗</a>
+      </nav>
+    </div>
+
+    <h1 class="name">Minh Luu</h1>
+
+    <div class="hero-grid">
+      <div class="who">
+        <img class="photo" src="avatar.png" width="88" height="88" alt="Photo of Minh Luu">
+        <div class="intro">
+          <p class="lead">I build machine learning and LLM agent tools that speed up the manual parts of hardware verification.</p>
+          <p>I'm at Texas A&amp;M University. Before that, I worked on design verification at Infineon Technologies in Hanoi.</p>
         </div>
       </div>
 
-      <div class="intro">
-        <p class="lead">I build machine learning and LLM agent tools that speed up the manual parts of hardware verification.</p>
-        <p>I collaborate with Jiang Hu's group at Texas A&amp;M University. I previously worked at Infineon Technologies in Hanoi, Vietnam.</p>
-      </div>
-
-      <div class="contact">
-        <a class="btn" href="https://github.com/minhluu2000">
-          <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          GitHub
-        </a>
-        <a class="btn" href="#publications">
-          <svg class="gfx" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" d="M6 2h8l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path stroke="currentColor" d="M14 2v5h5M8 13h8M8 17h5"/></svg>
-          Publications
-        </a>
-        <!-- <a class="btn" href="mailto:you@example.com">Email</a> -->
-        <!-- <a class="btn" href="https://scholar.google.com/citations?user=YOUR_ID">Google Scholar</a> -->
-        <!-- <a class="btn" href="cv.pdf">CV</a> -->
-      </div>
-    </div>
-
-    <figure class="wave-card">
-      <figcaption class="wave-head"><span>tb_aes_core.vcd</span><span>failing test</span></figcaption>
-      <svg class="gfx wave" viewBox="0 0 352 146" role="img" aria-label="A simulation waveform where the error signal rises at the failure point">
-        <path class="s-grid" stroke-width="1" stroke-dasharray="2 4" d="M104 0V142M144 0V142M184 0V142M224 0V142M304 0V142"/>
-        <g class="t-label">
-          <text x="4" y="19.5">clk</text>
-          <text x="4" y="47.5">rst_n</text>
-          <text x="4" y="75.5">req</text>
-          <text x="4" y="103.5">data</text>
-          <text x="4" y="131.5">err</text>
-        </g>
-        <path class="trace s-acc" d="M64 23v-14h10v14h10v-14h10v14h10v-14h10v14h10v-14h10v14h10v-14h10v14h10v-14h10v14h10v-14h10v14h10v-14h10v14h10v-14h10v14h10v-14h10v14h10v-14h10v14h10v-14h10v14h10v-14h10v14h10v-14h10v14h10"/>
-        <path class="trace d1 s-acc" d="M64 51H84V37H344"/>
-        <path class="trace d2 s-acc" d="M64 79H104V65H124V79H164V65H184V79H224V65H244V79H344"/>
-        <g class="fade">
-          <path class="s-acc" d="M64 93H100L104 100L100 107H64"/>
-          <path class="s-acc" d="M108 93H160L164 100L160 107H108L104 100Z"/>
-          <path class="s-acc" d="M168 93H220L224 100L220 107H168L164 100Z"/>
-          <path class="s-acc" d="M228 93H260L264 100L260 107H228L224 100Z"/>
-          <path class="s-bug f-bugsoft" d="M344 93H268L264 100L268 107H344"/>
-          <g class="t-bus">
-            <text x="84" y="103.5">00</text>
-            <text x="134" y="103.5">3A</text>
-            <text x="194" y="103.5">7F</text>
-            <text x="246" y="103.5">C4</text>
-            <text class="bad" x="306" y="103.5">XX</text>
+      <figure class="wave-fig">
+        <figcaption class="wave-cap label"><span>tb_aes_core.vcd</span><span>failing test</span></figcaption>
+        <svg class="gfx wave" viewBox="0 0 352 162" role="img" aria-label="A simulation waveform where the error signal rises at the failure point">
+          <path class="s-rule" stroke-width="1" stroke-dasharray="2 4" d="M104 0V146M144 0V146M184 0V146M224 0V146M304 0V146"/>
+          <text class="t-label" x="0" y="19.5">clk</text>
+          <text class="t-label" x="0" y="47.5">rst_n</text>
+          <text class="t-label" x="0" y="75.5">req</text>
+          <text class="t-label" x="0" y="103.5">data</text>
+          <text class="t-label" x="0" y="131.5">err</text>
+          <path class="trace s-acc" d="M64 23v-14h10v14h10v-14h10v14h10v-14h10v14h10v-14h10v14h10v-14h10v14h10v-14h10v14h10v-14h10v14h10v-14h10v14h10v-14h10v14h10v-14h10v14h10v-14h10v14h10v-14h10v14h10v-14h10v14h10v-14h10v14h10"/>
+          <path class="trace d1 s-acc" d="M64 51H84V37H344"/>
+          <path class="trace d2 s-acc" d="M64 79H104V65H124V79H164V65H184V79H224V65H244V79H344"/>
+          <g class="fade">
+            <path class="s-acc" d="M64 93H100L104 100L100 107H64"/>
+            <path class="s-acc" d="M108 93H160L164 100L160 107H108L104 100Z"/>
+            <path class="s-acc" d="M168 93H220L224 100L220 107H168L164 100Z"/>
+            <path class="s-acc" d="M228 93H260L264 100L260 107H228L224 100Z"/>
+            <path class="s-bug f-bugsoft" d="M344 93H268L264 100L268 107H344"/>
+            <text class="t-bus" x="84" y="103.5">00</text>
+            <text class="t-bus" x="134" y="103.5">3A</text>
+            <text class="t-bus" x="194" y="103.5">7F</text>
+            <text class="t-bus" x="246" y="103.5">C4</text>
+            <text class="t-bus t-bad" x="306" y="103.5">XX</text>
+            <path class="s-faint" d="M64 135H264"/>
           </g>
-          <path class="s-faint" d="M64 135H264"/>
-        </g>
-        <g class="fade-late">
-          <path class="s-bug" d="M264 135V121H344"/>
-          <path class="s-bug" stroke-width="1.2" stroke-dasharray="3 3" d="M264 0V142"/>
-        </g>
-      </svg>
-      <div class="wave-foot">
-        <span class="chip chip-bug">fail @ 1,240 ns</span>
-        <span class="chip chip-acc">suspect: aes_core</span>
-      </div>
-    </figure>
-  </div>
-</header>
-
-<main class="wrap">
-
-  <section aria-labelledby="research">
-    <div class="section-head"><h2 id="research">Research</h2></div>
-    <div class="areas">
-      <div class="area">
-        <div class="icon"><svg class="gfx" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 16h4V8h4v8h4V8h4v8h4"/></svg></div>
-        <h3>Failure triage</h3>
-        <p>Find the buggy RTL module straight from failing waveforms.</p>
-      </div>
-      <div class="area">
-        <div class="icon"><svg class="gfx" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="14" rx="5" ry="6"/><path d="M12 8v12M10 8.5 8 5M14 8.5 16 5M7 11H4M7 15H3M7.5 18.5 5 20M17 11h3M17 15h4M16.5 18.5 19 20"/></svg></div>
-        <h3>Bug generation</h3>
-        <p>LLM agents that create realistic RTL bugs to train and test verification tools.</p>
-      </div>
-      <div class="area">
-        <div class="icon"><svg class="gfx" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <h3>Formal verification</h3>
-        <p>Agents and graphs that write assertions and explain formal failures.</p>
-      </div>
+          <g class="fade-late">
+            <path class="s-bug" d="M264 135V121H344"/>
+            <path class="s-bug" stroke-width="1.2" stroke-dasharray="3 3" d="M264 0V146"/>
+            <text class="t-note t-bad" x="352" y="159" text-anchor="end">fail @ 1,240 ns</text>
+            <text class="t-note t-acc" x="64" y="159">suspect: aes_core</text>
+          </g>
+        </svg>
+      </figure>
     </div>
-  </section>
+  </header>
 
-  <section aria-labelledby="publications">
-    <div class="section-head">
-      <h2 id="publications">Publications</h2>
-      <p class="section-note">also published as Luu Danh Minh</p>
-    </div>
-
-    <ol class="pubs">
-      <li class="pub">
-        <div class="thumb" aria-hidden="true">
-          <svg class="gfx" viewBox="0 0 136 96">
-            <path class="s-line" d="M20 48 48 24M48 24 80 40M80 40 112 24M80 76 112 60M48 72 80 76"/>
-            <path class="s-bug" stroke-width="2" d="M112 60 80 40 48 72 20 48"/>
-            <circle class="s-line f-surface" cx="48" cy="24" r="5"/>
-            <circle class="s-line f-surface" cx="112" cy="24" r="5"/>
-            <circle class="s-line f-surface" cx="80" cy="76" r="5"/>
-            <circle class="s-bug f-surface" cx="80" cy="40" r="5"/>
-            <circle class="s-bug f-surface" cx="48" cy="72" r="5"/>
-            <circle class="s-bug f-bugsoft" cx="112" cy="60" r="5"/>
-            <circle class="s-bug" stroke-width="1.2" cx="20" cy="48" r="10"/>
-            <circle class="f-bug" cx="20" cy="48" r="5"/>
-          </svg>
+  <main>
+    <section class="sec" aria-labelledby="research">
+      <div class="sec-label"><span class="num">01</span><h2 id="research">Research</h2></div>
+      <div class="areas">
+        <div class="area">
+          <span class="n">1.1</span>
+          <h3>Failure triage</h3>
+          <p>Find the buggy RTL module straight from failing waveforms.</p>
         </div>
-        <div>
-          <span class="venue">DVCon U.S. 2026</span>
-          <h3><a href="https://arxiv.org/abs/2603.07943">ConnChecker: Automated Root-Cause Analysis for Formal Connectivity Check via Graph</a></h3>
-          <p class="authors">Do Ngoc Tiep, Nguyen Linh Anh, <b>Luu Danh Minh</b></p>
-          <p class="note">Finds the root cause of formal connectivity failures using a graph of the design. Cuts debug time by up to 80% on two industrial SoCs.</p>
-          <div class="links">
-            <a class="btn btn-sm" href="https://arxiv.org/abs/2603.07943"><svg class="gfx" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" d="M6 2h8l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path stroke="currentColor" d="M14 2v5h5"/></svg>arXiv</a>
+        <div class="area">
+          <span class="n">1.2</span>
+          <h3>Bug generation</h3>
+          <p>LLM agents that create realistic RTL bugs to train and test verification tools.</p>
+        </div>
+        <div class="area">
+          <span class="n">1.3</span>
+          <h3>Formal verification</h3>
+          <p>Agents and graphs that write assertions and explain formal failures.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" aria-labelledby="papers">
+      <div class="sec-label">
+        <span class="num">02</span><h2 id="papers">Papers</h2>
+        <p class="aka">Also published as Luu Danh Minh</p>
+      </div>
+      <ol>
+        <li class="pub">
+          <div>
+            <span class="venue">DVCon U.S. 2026</span>
+            <h3><a href="https://arxiv.org/abs/2603.07943">ConnChecker: Automated Root-Cause Analysis for Formal Connectivity Check via Graph</a></h3>
+            <p class="authors">Do Ngoc Tiep, Nguyen Linh Anh, <b>Luu Danh Minh</b></p>
+            <p class="note">Finds the root cause of formal connectivity failures using a graph of the design. Cuts debug time by up to 80% on two industrial SoCs.</p>
+            <p class="links"><a href="https://arxiv.org/abs/2603.07943">arXiv ↗</a></p>
           </div>
-        </div>
-      </li>
-
-      <li class="pub">
-        <div class="thumb" aria-hidden="true">
-          <svg class="gfx" viewBox="0 0 136 96">
-            <path class="s-line" stroke-dasharray="3 4" d="M68 48 68 16M68 48 98.4 38.1M68 48 86.8 73.9M68 48 49.2 73.9M68 48 37.6 38.1"/>
-            <path class="s-line" d="M68 16 98.4 38.1 86.8 73.9 49.2 73.9 37.6 38.1Z"/>
-            <circle class="s-acc f-accsoft" cx="68" cy="16" r="6"/>
-            <circle class="s-acc f-accsoft" cx="98.4" cy="38.1" r="6"/>
-            <circle class="s-acc f-accsoft" cx="86.8" cy="73.9" r="6"/>
-            <circle class="s-acc f-accsoft" cx="49.2" cy="73.9" r="6"/>
-            <circle class="s-acc f-accsoft" cx="37.6" cy="38.1" r="6"/>
-            <circle class="f-acc" cx="68" cy="48" r="12"/>
-            <path stroke="#fff" stroke-width="2.2" d="M62.5 48.5l3.5 3.5 7-7"/>
-          </svg>
-        </div>
-        <div>
-          <span class="venue">DVCon U.S. 2026</span>
-          <h3><a href="https://arxiv.org/abs/2603.03175">Saarthi for AGI: Towards Domain-Specific General Intelligence for Formal Verification</a></h3>
-          <p class="authors">Aman Kumar, Deepak Narayan Gadde, <b>Luu Danh Minh</b>, Vaisakh Naduvodi Viswambharan, Keerthan Kopparam Radhakrishna, Sivaram Pothireddypalli</p>
-          <p class="note">Adds a rulebook, a specification grammar, and GraphRAG to the Saarthi multi-agent framework. Assertion accuracy improves by about 70%.</p>
-          <div class="links">
-            <a class="btn btn-sm" href="https://arxiv.org/abs/2603.03175"><svg class="gfx" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" d="M6 2h8l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path stroke="currentColor" d="M14 2v5h5"/></svg>arXiv</a>
+          <div class="fig" aria-hidden="true">
+            <svg class="gfx" viewBox="0 0 136 96">
+              <path class="s-line" d="M20 48 48 24M48 24 80 40M80 40 112 24M80 76 112 60M48 72 80 76"/>
+              <path class="s-bug" stroke-width="2" d="M112 60 80 40 48 72 20 48"/>
+              <circle class="s-line f-bg" cx="48" cy="24" r="5"/>
+              <circle class="s-line f-bg" cx="112" cy="24" r="5"/>
+              <circle class="s-line f-bg" cx="80" cy="76" r="5"/>
+              <circle class="s-bug f-bg" cx="80" cy="40" r="5"/>
+              <circle class="s-bug f-bg" cx="48" cy="72" r="5"/>
+              <circle class="s-bug f-bugsoft" cx="112" cy="60" r="5"/>
+              <circle class="s-bug" stroke-width="1.2" cx="20" cy="48" r="10"/>
+              <circle class="f-bug" cx="20" cy="48" r="5"/>
+            </svg>
           </div>
-        </div>
-      </li>
+        </li>
 
-      <li class="pub">
-        <div class="thumb" aria-hidden="true">
-          <svg class="gfx" viewBox="0 0 136 96">
-            <path class="s-acc" d="M12 21v-10h8v10h8v-10h8v10h8v-10h8v10h8v-10h8v10h8v-10h8v10h8v-10h8v10h8v-10h8v10h8"/>
-            <path class="s-acc" d="M12 37H40V27H72V37H124"/>
-            <path class="s-faint" d="M12 53H88"/>
-            <path class="s-bug" d="M88 53V43H124"/>
-            <path class="s-bug" stroke-width="1.2" stroke-dasharray="3 3" d="M88 4V60"/>
-            <rect class="f-acc" x="12" y="68" width="84" height="5" rx="2.5"/>
-            <rect class="f-line" x="12" y="77" width="44" height="5" rx="2.5"/>
-            <rect class="f-line" x="12" y="86" width="24" height="5" rx="2.5"/>
-          </svg>
-        </div>
-        <div>
-          <span class="venue">MLCAD 2025</span>
-          <h3><a href="https://arxiv.org/abs/2506.03590">VCDiag: Classifying Erroneous Waveforms for Failure Triage Acceleration</a></h3>
-          <p class="authors"><b>Minh Luu</b>, Surya Jasper, Khoi Le, Evan Pan, Michael Quinn, Aakash Tyagi, Jiang Hu</p>
-          <p class="note">Classifies failing simulation waveforms to find the buggy RTL module. Reaches over 94% top-3 accuracy and shrinks raw VCD data by over 120&times;.</p>
-          <div class="links">
-            <a class="btn btn-sm" href="https://arxiv.org/abs/2506.03590"><svg class="gfx" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" d="M6 2h8l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path stroke="currentColor" d="M14 2v5h5"/></svg>arXiv</a>
-            <a class="btn btn-sm" href="https://github.com/minhluu2000/mlcad2025_vcdiag"><svg class="gfx" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></svg>Code</a>
-            <a class="btn btn-sm" href="https://zenodo.org/records/16735572"><svg class="gfx" viewBox="0 0 24 24" aria-hidden="true"><rect stroke="currentColor" x="6" y="6" width="12" height="12" rx="2"/><path stroke="currentColor" d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg>Designs</a>
-            <a class="btn btn-sm" href="https://zenodo.org/records/16791965"><svg class="gfx" viewBox="0 0 24 24" aria-hidden="true"><ellipse stroke="currentColor" cx="12" cy="5" rx="8" ry="3"/><path stroke="currentColor" d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>Dataset</a>
+        <li class="pub">
+          <div>
+            <span class="venue">DVCon U.S. 2026</span>
+            <h3><a href="https://arxiv.org/abs/2603.03175">Saarthi for AGI: Towards Domain-Specific General Intelligence for Formal Verification</a></h3>
+            <p class="authors">Aman Kumar, Deepak Narayan Gadde, <b>Luu Danh Minh</b>, Vaisakh Naduvodi Viswambharan, Keerthan Kopparam Radhakrishna, Sivaram Pothireddypalli</p>
+            <p class="note">Adds a rulebook, a specification grammar, and GraphRAG to the Saarthi multi-agent framework. Assertion accuracy improves by about 70%.</p>
+            <p class="links"><a href="https://arxiv.org/abs/2603.03175">arXiv ↗</a></p>
           </div>
-        </div>
-      </li>
-
-      <li class="pub">
-        <div class="thumb" aria-hidden="true">
-          <svg class="gfx" viewBox="0 0 136 96">
-            <rect class="f-line" x="16" y="13" width="64" height="5" rx="2.5"/>
-            <rect class="f-line" x="28" y="25" width="80" height="5" rx="2.5"/>
-            <rect class="f-line" x="28" y="37" width="52" height="5" rx="2.5"/>
-            <rect class="f-bugsoft" x="8" y="46" width="120" height="15" rx="5"/>
-            <rect class="f-bug" x="40" y="51" width="60" height="5" rx="2.5"/>
-            <circle class="f-bug" cx="114" cy="53.5" r="3.5"/>
-            <rect class="f-line" x="28" y="67" width="70" height="5" rx="2.5"/>
-            <rect class="f-line" x="16" y="79" width="36" height="5" rx="2.5"/>
-          </svg>
-        </div>
-        <div>
-          <span class="venue">MLCAD 2025</span>
-          <h3><a href="https://arxiv.org/abs/2506.10501">BugGen: A Self-Correcting Multi-Agent LLM Pipeline for Realistic RTL Bug Synthesis</a></h3>
-          <p class="authors">Surya Jasper, <b>Minh Luu</b>, Evan Pan, Aakash Tyagi, Michael Quinn, Jiang Hu, David Kebo Houngninou</p>
-          <p class="note">Uses LLM agents to create realistic RTL bugs. Produced 500 bugs at 94% functional accuracy and found 104 bugs that OpenTitan regressions missed.</p>
-          <div class="links">
-            <a class="btn btn-sm" href="https://arxiv.org/abs/2506.10501"><svg class="gfx" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" d="M6 2h8l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path stroke="currentColor" d="M14 2v5h5"/></svg>arXiv</a>
-            <a class="btn btn-sm" href="https://github.com/minhluu2000/mlcad2025_vcdiag"><svg class="gfx" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></svg>Code</a>
+          <div class="fig" aria-hidden="true">
+            <svg class="gfx" viewBox="0 0 136 96">
+              <path class="s-line" stroke-dasharray="3 4" d="M68 48 68 16M68 48 98.4 38.1M68 48 86.8 73.9M68 48 49.2 73.9M68 48 37.6 38.1"/>
+              <path class="s-line" d="M68 16 98.4 38.1 86.8 73.9 49.2 73.9 37.6 38.1Z"/>
+              <circle class="s-acc f-bg" cx="68" cy="16" r="6"/>
+              <circle class="s-acc f-bg" cx="98.4" cy="38.1" r="6"/>
+              <circle class="s-acc f-bg" cx="86.8" cy="73.9" r="6"/>
+              <circle class="s-acc f-bg" cx="49.2" cy="73.9" r="6"/>
+              <circle class="s-acc f-bg" cx="37.6" cy="38.1" r="6"/>
+              <circle class="f-acc" cx="68" cy="48" r="12"/>
+              <path stroke="#fff" stroke-width="2.2" d="M62.5 48.5l3.5 3.5 7-7"/>
+            </svg>
           </div>
-        </div>
-      </li>
-    </ol>
-  </section>
+        </li>
 
-  <section aria-labelledby="projects">
-    <div class="section-head"><h2 id="projects">Other projects</h2></div>
-    <div class="projects">
-      <a class="project" href="https://github.com/minhluu2000/ProjectMoca">
-        <div class="project-top"><h3>ProjectMoca</h3><span class="lang">Python</span></div>
-        <p>Hands-free computer control. Face tracking moves the cursor, claps click, and voice types.</p>
-      </a>
-      <a class="project" href="https://github.com/minhluu2000/AggiePass">
-        <div class="project-top"><h3>AggiePass</h3><span class="lang">C++</span></div>
-        <p>A small hardware password manager.</p>
-      </a>
-    </div>
-  </section>
+        <li class="pub">
+          <div>
+            <span class="venue">MLCAD 2025</span>
+            <h3><a href="https://arxiv.org/abs/2506.03590">VCDiag: Classifying Erroneous Waveforms for Failure Triage Acceleration</a></h3>
+            <p class="authors"><b>Minh Luu</b>, Surya Jasper, Khoi Le, Evan Pan, Michael Quinn, Aakash Tyagi, Jiang Hu</p>
+            <p class="note">Classifies failing simulation waveforms to find the buggy RTL module. Reaches over 94% top-3 accuracy and shrinks raw VCD data by over 120&times;.</p>
+            <p class="links">
+              <a href="https://arxiv.org/abs/2506.03590">arXiv ↗</a>
+              <a href="https://github.com/minhluu2000/mlcad2025_vcdiag">Code ↗</a>
+              <a href="https://zenodo.org/records/16735572">Designs ↗</a>
+              <a href="https://zenodo.org/records/16791965">Dataset ↗</a>
+            </p>
+          </div>
+          <div class="fig" aria-hidden="true">
+            <svg class="gfx" viewBox="0 0 136 96">
+              <path class="s-acc" d="M12 21v-10h8v10h8v-10h8v10h8v-10h8v10h8v-10h8v10h8v-10h8v10h8v-10h8v10h8v-10h8v10h8"/>
+              <path class="s-acc" d="M12 37H40V27H72V37H124"/>
+              <path class="s-faint" d="M12 53H88"/>
+              <path class="s-bug" d="M88 53V43H124"/>
+              <path class="s-bug" stroke-width="1.2" stroke-dasharray="3 3" d="M88 4V60"/>
+              <rect class="f-acc" x="12" y="68" width="84" height="5"/>
+              <rect class="f-line" x="12" y="77" width="44" height="5"/>
+              <rect class="f-line" x="12" y="86" width="24" height="5"/>
+            </svg>
+          </div>
+        </li>
 
-  <footer>
+        <li class="pub">
+          <div>
+            <span class="venue">MLCAD 2025</span>
+            <h3><a href="https://arxiv.org/abs/2506.10501">BugGen: A Self-Correcting Multi-Agent LLM Pipeline for Realistic RTL Bug Synthesis</a></h3>
+            <p class="authors">Surya Jasper, <b>Minh Luu</b>, Evan Pan, Aakash Tyagi, Michael Quinn, Jiang Hu, David Kebo Houngninou</p>
+            <p class="note">Uses LLM agents to create realistic RTL bugs. Produced 500 bugs at 94% functional accuracy and found 104 bugs that OpenTitan regressions missed.</p>
+            <p class="links">
+              <a href="https://arxiv.org/abs/2506.10501">arXiv ↗</a>
+              <a href="https://github.com/minhluu2000/mlcad2025_vcdiag">Code ↗</a>
+            </p>
+          </div>
+          <div class="fig" aria-hidden="true">
+            <svg class="gfx" viewBox="0 0 136 96">
+              <rect class="f-line" x="16" y="13" width="64" height="5"/>
+              <rect class="f-line" x="28" y="25" width="80" height="5"/>
+              <rect class="f-line" x="28" y="37" width="52" height="5"/>
+              <rect class="f-bugsoft" x="8" y="46" width="120" height="15"/>
+              <rect class="f-bug" x="40" y="51" width="60" height="5"/>
+              <rect class="f-bug" x="110" y="50" width="7" height="7"/>
+              <rect class="f-line" x="28" y="67" width="70" height="5"/>
+              <rect class="f-line" x="16" y="79" width="36" height="5"/>
+            </svg>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="sec" aria-labelledby="projects">
+      <div class="sec-label"><span class="num">03</span><h2 id="projects">Projects</h2></div>
+      <ul>
+        <li class="proj">
+          <h3><a href="https://github.com/minhluu2000/ProjectMoca">ProjectMoca</a></h3>
+          <span class="lang">Python</span>
+          <p>Hands-free computer control. Face tracking moves the cursor, claps click, and voice types.</p>
+        </li>
+        <li class="proj">
+          <h3><a href="https://github.com/minhluu2000/AggiePass">AggiePass</a></h3>
+          <span class="lang">C++</span>
+          <p>A small hardware password manager.</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="foot label">
     <span>© 2026 Minh Luu</span>
     <span>Updated November 2026</span>
   </footer>
 
-</main>
+</div>
 </body>
 </html>
