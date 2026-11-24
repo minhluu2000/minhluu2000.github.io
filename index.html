@@ -61,10 +61,11 @@
       border: 1px solid var(--border);
       border-radius: 6px;
       background: #fff;
-      display: grid;
-      place-items: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .thumb img { width: 100%; height: 100%; object-fit: contain; }
+    .thumb img { max-width: 100%; max-height: 100%; }
     .thumb.empty { color: #8c959f; font-weight: 600; }
     .pub h3 { font-size: 1rem; line-height: 1.4; }
     .pub h3 a { color: var(--text); }
