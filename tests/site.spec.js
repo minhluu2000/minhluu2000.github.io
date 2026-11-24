@@ -110,6 +110,27 @@ test('external links use https', async ({ page }) => {
   for (const link of externalLinks) expect(link).toMatch(/^https:\/\//);
 });
 
+// Outside sites go down or block bots now and then, so a bad answer is reported
+// as a warning instead of failing the run. LinkedIn is skipped because it
+// answers 999 to every automated request.
+test('external links respond (warnings only)', async ({ page, request }) => {
+  test.setTimeout(120_000);
+  await page.goto(PAGE_URL);
+  const links = [...new Set(await page.$$eval('a[href^="http"]', (anchors) => anchors.map((a) => a.href)))]
+    .filter((url) => new URL(url).hostname !== 'www.linkedin.com');
+  expect(links.length).toBeGreaterThan(0);
+  const answers = await Promise.all(links.map((url) => request.get(url, { timeout: 20_000 })
+    .then((response) => response.status(), (error) => error.message.split('\n')[0])));
+  const warningPrefix = process.env.GITHUB_ACTIONS ? '::warning title=External link::' : 'WARNING: ';
+  links.forEach((url, i) => {
+    if (answers[i] === 200) return;
+    const message = `${url} answered ${answers[i]}`;
+    test.info().annotations.push({ type: 'warning', description: message });
+    console.warn(warningPrefix + message);
+  });
+  console.log(`Checked ${links.length} external links, ${answers.filter((a) => a !== 200).length} warnings.`);
+});
+
 test('every paper lists title link, authors with my name in bold, venue and arXiv', async ({ page }) => {
   await page.goto(PAGE_URL);
   const papers = page.locator('.pub');
